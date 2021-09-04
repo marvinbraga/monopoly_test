@@ -13,9 +13,8 @@ class Monopoly:
     Class to Monopoly World.
     """
 
-    def __init__(self, players, board):
+    def __init__(self, board):
         self._board = board
-        self._players = players
         self._dices = (Dice(),)
         self._winner = None
 
@@ -39,7 +38,7 @@ class Monopoly:
         Run the game.
         :return: Self.
         """
-        for p in self._players:
+        for p in self._board.players:
             print(p)
 
         print(self._board)
