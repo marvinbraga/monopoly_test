@@ -43,3 +43,11 @@ class MonopolyBoard:
         if len(self._properties) > MAXIMUM_NUMBER_PROPERTIES:
             raise MaximumNumberExceeded()
         return self
+
+    @property
+    def players(self):
+        """
+        Return the property players.
+        :return: Tuple.
+        """
+        return self._players
