@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install pipenv
           pipenv sync --dev
-          pipenv install --dev cove
+          pipenv install cove
 
       - name: Lint with Flake8
         run: |
