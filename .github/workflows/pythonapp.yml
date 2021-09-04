@@ -32,6 +32,6 @@ jobs:
         run: |
           export PYTHONPATH=src
           pipenv run pytest --cov=game/properties
-          pipenv run codecov
+          # pipenv run codecov
 
       - run: echo "This job's status is ${{ job.status }}."
