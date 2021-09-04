@@ -47,3 +47,27 @@ def test_players_data_charge(players):
     """
     assert players
     assert isinstance(players, tuple)
+
+
+def test_add_owner_to_property(players, properties):
+    """
+    Test to check the process to add a player owner to a property.
+    :param players: Tuple.
+    :param properties: Tuple.
+    :return: None.
+    """
+    player = players[0]
+    prop = properties[0]
+    if player.should_buy(prop):
+        player.buy(prop)
+    assert prop.owner is player
+
+
+def test_is_property_free(properties):
+    """
+    Verify if property don't have an owner.
+    :param properties: Tuple.
+    :return: None.
+    """
+    prop = properties[0]
+    assert prop.owner is None
