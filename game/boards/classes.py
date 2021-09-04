@@ -20,6 +20,9 @@ class MonopolyBoard:
         self._properties = properties
         self._check()._init_board()
 
+    def __str__(self):
+        return ''.join([str(p) + '\n' for p in self._properties])
+
     def _init_board(self):
         """
         Initialize board.

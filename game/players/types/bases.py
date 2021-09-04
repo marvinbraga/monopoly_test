@@ -14,6 +14,9 @@ class BasePlayerType:
     def __init__(self, player):
         self._player = player
 
+    def __str__(self):
+        return self.__class__.__name__
+
     def is_to_buy(self, prop):
         """
         Check if the player is to buy the property.

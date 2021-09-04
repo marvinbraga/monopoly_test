@@ -17,10 +17,13 @@ class PlayerType(Enum):
     """
     Class to indicate the player type.
     """
-    IMPULSIVE = 0
-    DEMANDING = 1
-    CAUTIOUS = 2
-    RANDOM = 3
+    IMPULSIVE = 0, 'Impulsive'
+    DEMANDING = 1, 'Demanding'
+    CAUTIOUS = 2, 'Cautious'
+    RANDOM = 3, 'Random'
+
+    def __str__(self):
+        return self.value[1]
 
     def new(self, player):
         """

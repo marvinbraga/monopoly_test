@@ -19,6 +19,10 @@ class AbstractProperty(metaclass=ABCMeta):
         self._to_buy = to_buy
         self._owner = None
 
+    def __str__(self):
+        return f'[{self.__class__.__name__}] Name: {self._name}, Owner: {self._owner}, ' \
+               f'Rent: {self._to_rent}, Buy: {self._to_buy}.'
+
     @property
     def owner(self):
         """
