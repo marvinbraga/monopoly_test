@@ -17,6 +17,7 @@ class Monopoly:
         self._board = board
         self._players = players
         self._dices = (Dice(),)
+        self._winner = None
 
     def roll_dices(self):
         """
@@ -24,3 +25,22 @@ class Monopoly:
         :return: Tuple with values.
         """
         return (dice.roll for dice in self._dices)
+
+    @property
+    def winner(self):
+        """
+        Get the game winner player.
+        :return: Player Object.
+        """
+        return self._winner
+
+    def start(self):
+        """
+        Run the game.
+        :return: Self.
+        """
+        for p in self._players:
+            print(p)
+
+        print(self._board)
+        return self

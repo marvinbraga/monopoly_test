@@ -43,9 +43,11 @@ class Player:
         self._balance = balance
         self._color = color
         self._is_alive = True
-        self._position = 0
         self._player_type = player_type.new(self)
         self._alive_rule = alive_rule(self)
+
+    def __str__(self):
+        return f'[Player] Color: {self._color.value[1]}, Type: {self._player_type}, Balance: {self._balance}.'
 
     @property
     def color(self):
@@ -84,8 +86,9 @@ class Player:
         :param prop: Property Object.
         :return: Self.
         """
-        self._balance -= prop.to_buy
-        prop.owner = self
+        if self._is_alive:
+            self._balance -= prop.to_buy
+            prop.owner = self
         return self
 
     def collect(self, value):
@@ -94,7 +97,8 @@ class Player:
         :param value: Float.
         :return: Self.
         """
-        self._balance += value
+        if self._is_alive:
+            self._balance += value
         return self
 
     def pay(self, value):
@@ -103,5 +107,6 @@ class Player:
         :param value: Float.
         :return: Self.
         """
-        self._balance -= value
+        if self._is_alive:
+            self._balance -= value
         return self
