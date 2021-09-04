@@ -30,14 +30,14 @@ jobs:
       - name: Tests with Pytest
         run: |
           export PYTHONPATH=src
-#          pipenv run pytest game/properties --cov=game/properties
-#          pipenv run codecov
+          pytest game/properties --cov=game/properties
+          codecov
 
-      - name: Run tests and collect coverage
-        run: |
-          coverage run game/properties/tests/basics.py
-          coverage xml
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+#      - name: Run tests and collect coverage
+#        run: |
+#          coverage run game/properties/tests/basics.py
+#          coverage xml
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v2
 
       - run: echo "This job's status is ${{ job.status }}."
