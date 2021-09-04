@@ -5,9 +5,9 @@ Marcus Vinicius Braga, set 2021.
 
 Game Boards Module.
 """
-from core.settings import MAXIMUM_NUMBER_PROPERTIES
-from game.boards.exceptions import MaximumNumberExceeded
-from game.boards.positions import BoardPosition
+from src.core.settings import MAXIMUM_NUMBER_PROPERTIES
+from src.game.boards.exceptions import MaximumNumberExceeded
+from src.game.boards.positions import BoardPosition
 
 
 class MonopolyBoard:

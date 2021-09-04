@@ -7,8 +7,8 @@ Properties Basics Tests Module.
 """
 import pytest
 
-from game.players.data import PlayerData
-from game.properties.data import PropertyData
+from src.game.players.data import PlayerData
+from src.game.properties.data import PropertyData
 
 
 @pytest.fixture

@@ -7,10 +7,10 @@ Player Type Factory Module.
 """
 from enum import Enum
 
-from game.players.types.cautious import Cautious
-from game.players.types.demanding import Demanding
-from game.players.types.impulsive import Impulsive
-from game.players.types.random import Random
+from src.game.players.types.cautious import Cautious
+from src.game.players.types.demanding import Demanding
+from src.game.players.types.impulsive import Impulsive
+from src.game.players.types.random import Random
 
 
 class PlayerType(Enum):

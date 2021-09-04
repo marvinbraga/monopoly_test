@@ -5,7 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Properties Data Module.
 """
-from game.properties.classes import Property, Company
+from src.game.properties.classes import Property, Company
 
 
 class PropertyData:

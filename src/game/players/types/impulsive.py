@@ -5,7 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Impulsive Player Type Module.
 """
-from game.players.types.bases import BasePlayerType
+from src.game.players.types.bases import BasePlayerType
 
 
 class Impulsive(BasePlayerType):

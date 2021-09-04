@@ -5,7 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Monopoly Properties Module.
 """
-from game.properties.abstracts import AbstractProperty
+from src.game.properties.abstracts import AbstractProperty
 
 
 class Property(AbstractProperty):

@@ -7,7 +7,7 @@ Players Module.
 """
 from enum import Enum
 
-from core.settings import OPENING_BALANCE
+from src.core.settings import OPENING_BALANCE
 
 
 class PlayerColor(Enum):

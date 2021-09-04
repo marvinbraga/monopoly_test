@@ -7,8 +7,8 @@ Main Module.
 """
 from game.boards.classes import MonopolyBoard
 from game.players.data import PlayerData
-from game.properties.data import PropertyData
-from game.worlds import Monopoly
+from src.game.properties.data import PropertyData
+from src.game.worlds import Monopoly
 
 if __name__ == '__main__':
     Monopoly(

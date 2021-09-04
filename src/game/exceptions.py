@@ -5,7 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Boards Exceptions Module.
 """
-from core.exceptions import GameBaseException
+from src.core.exceptions import GameBaseException
 
 
 class GameIsOver(GameBaseException):

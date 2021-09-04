@@ -5,8 +5,8 @@ Marcus Vinicius Braga, set 2021.
 
 Players Data Module.
 """
-from game.players.classes import Player, PlayerColor
-from game.players.factories import PlayerType
+from src.game.players.classes import Player, PlayerColor
+from src.game.players.factories import PlayerType
 
 
 class PlayerData:

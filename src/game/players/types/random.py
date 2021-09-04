@@ -3,14 +3,16 @@
 Monopoly Game Project
 Marcus Vinicius Braga, set 2021.
 
-Cautious Player Type Module.
+Random Player Type Module.
 """
-from game.players.types.bases import BasePlayerType
+import random
+
+from src.game.players.types.bases import BasePlayerType
 
 
-class Cautious(BasePlayerType):
+class Random(BasePlayerType):
     """
-    Class to cautious player type.
+    Class to random player type.
     """
 
     def is_to_buy(self, prop):
@@ -19,4 +21,4 @@ class Cautious(BasePlayerType):
         :param prop: Property Object.
         :return: Boolean.
         """
-        return super().is_to_buy(prop) and self._player.balance - prop.to_buy >= 80
+        return super().is_to_buy(prop) and random.choice([True, False])

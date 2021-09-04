@@ -5,7 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Game World Module.
 """
-from game.utils.dices import Dice
+from src.game.utils.dices import Dice
 
 
 class Monopoly:
