@@ -30,7 +30,7 @@ jobs:
       - name: Tests with Pytest
         run: |
           export PYTHONPATH=src
-          pytest game/properties --cov=game/properties
+          pytest game/properties/tests/basics.py --cov=game/properties/tests/
           codecov
 
 #      - name: Run tests and collect coverage
