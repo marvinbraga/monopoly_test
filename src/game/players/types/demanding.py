@@ -19,4 +19,4 @@ class Demanding(BasePlayerType):
         :param prop: Property Object.
         :return: Boolean.
         """
-        return super().is_to_buy(prop) and prop.to_rent > 50
+        return super().is_to_buy(prop) and prop.to_rent() > 50

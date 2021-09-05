@@ -18,6 +18,7 @@ class MonopolyBoard:
     def __init__(self, players, properties):
         self._players = players
         self._properties = properties
+        self._positions = []
         self._check()._init_board()
 
     def __str__(self):
@@ -28,11 +29,14 @@ class MonopolyBoard:
         Initialize board.
         :return: Self.
         """
-        self._positions = [BoardPosition(prop) for prop in self._properties]
-        start_position = BoardPosition(None)
+        start_position = BoardPosition(0, None)
         for player in self._players:
             start_position.add_player(player)
-        self._positions.insert(0, start_position)
+        self._positions.append(start_position)
+        index = 0
+        for prop in self._properties:
+            index += 1
+            self._positions.append(BoardPosition(index, prop))
         return self
 
     def _check(self):
@@ -51,3 +55,27 @@ class MonopolyBoard:
         :return: Tuple.
         """
         return self._players
+
+    def get_player_position(self, player):
+        """
+        Returns the player position int the board.
+        :param player: Object.
+        :return: Position Object.
+        """
+        return next(pos for pos in self._positions if pos.is_player_in(player))
+
+    def move_player(self, player, number):
+        """
+        Move player in board.
+        :param player: Player object.
+        :param number: Number of squares on the board to walk.
+        :return: Position Object.
+        """
+        position = self.get_player_position(player)
+        position.remove_player(player)
+        index = position.index + number
+        if index > len(self._positions) - 1:
+            index -= len(self._positions)
+        position = self._positions[index]
+        position.add_player(player)
+        return position

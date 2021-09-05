@@ -110,3 +110,12 @@ class Player:
         if self._is_alive:
             self._balance -= value
         return self
+
+    def receive_bonus(self, value):
+        """
+        Method to add value to balance.
+        :param value: Float.
+        :return: Self.
+        """
+        self._balance += value
+        return self
