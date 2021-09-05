@@ -20,13 +20,21 @@ class PlayerData:
     def get():
         """
         Get players data.
-        :return: Tuple.
+        :return: List.
         """
-        players = [
+        return [
             Player(PlayerColor.BLUE, PlayerType.IMPULSIVE),
             Player(PlayerColor.YELLOW, PlayerType.CAUTIOUS),
             Player(PlayerColor.GREEN, PlayerType.DEMANDING),
             Player(PlayerColor.RED, PlayerType.RANDOM),
         ]
+
+    @staticmethod
+    def get_shuffled():
+        """
+        Get shuffled players data.
+        :return: List.
+        """
+        players = PlayerData.get()
         shuffle(players)
         return players

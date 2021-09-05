@@ -7,8 +7,9 @@ Properties Basics Tests Module.
 """
 import pytest
 
-from core.settings import BONUS
-from game.properties.classes import Property
+from src.game.utils.dices import Dice
+from src.core.settings import BONUS
+from src.game.properties.classes import Property
 from src.game.players.data import PlayerData
 from src.game.properties.data import PropertyData
 
@@ -53,3 +54,15 @@ def test_player_bonus_receive(players):
     balance = player.balance
     player.receive_bonus(BONUS)
     assert player.balance == balance + BONUS
+
+
+def test_player_pay_rent(players, properties):
+    p1 = players[0]
+    p2 = players[1]
+    prop = properties[0]
+    p1.buy(prop)
+    dice_value = Dice().roll
+    value = prop.to_rent(dice_value)
+    balance = p2.balance
+    p2.pay_rent(prop, dice_value)
+    assert p2.balance == balance - value

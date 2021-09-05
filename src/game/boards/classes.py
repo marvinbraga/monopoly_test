@@ -5,6 +5,8 @@ Marcus Vinicius Braga, set 2021.
 
 Game Boards Module.
 """
+import itertools
+
 from src.core.settings import MAXIMUM_NUMBER_PROPERTIES
 from src.game.boards.exceptions import MaximumNumberExceeded
 from src.game.boards.positions import BoardPosition
@@ -20,6 +22,7 @@ class MonopolyBoard:
         self._properties = properties
         self._positions = []
         self._check()._init_board()
+        self._iter_players = itertools.cycle(players)
 
     def __str__(self):
         return ''.join([str(p) + '\n' for p in self._properties])
@@ -52,9 +55,17 @@ class MonopolyBoard:
     def players(self):
         """
         Return the property players.
-        :return: Tuple.
+        :return: List.
         """
         return self._players
+
+    @property
+    def properties(self):
+        """
+        Return the property properties.
+        :return: Tuple.
+        """
+        return self._properties
 
     def get_player_position(self, player):
         """
@@ -63,6 +74,17 @@ class MonopolyBoard:
         :return: Position Object.
         """
         return next(pos for pos in self._positions if pos.is_player_in(player))
+
+    def get_next_player(self):
+        """
+        Get Next Alive Player from Iter.
+        :return: Player Object.
+        """
+        while True:
+            player = next(self._iter_players)
+            if player.is_alive:
+                break
+        return player
 
     def move_player(self, player, number):
         """
