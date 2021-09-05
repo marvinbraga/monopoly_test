@@ -7,7 +7,7 @@ Board Basic Tests Module.
 """
 import pytest
 
-from game.boards.classes import MonopolyBoard
+from src.game.boards.classes import MonopolyBoard
 from src.game.players.data import PlayerData
 from src.game.properties.data import PropertyData
 

@@ -23,4 +23,6 @@ class BasePlayerType:
         :param prop: Property Object.
         :return: Boolean.
         """
+        if not prop:
+            return False
         return self._player.is_alive and self._player.balance > 0

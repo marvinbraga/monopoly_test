@@ -24,6 +24,7 @@ class ClassicAliveRule:
     """
     Class to define alive rule.
     """
+
     def __init__(self, player):
         self._player = player
 
@@ -39,6 +40,7 @@ class Player:
     """
     Class to Monopoly Player.
     """
+
     def __init__(self, color, player_type, balance=OPENING_BALANCE, alive_rule=ClassicAliveRule):
         self._balance = balance
         self._color = color
@@ -118,4 +120,18 @@ class Player:
         :return: Self.
         """
         self._balance += value
+        return self
+
+    def pay_rent(self, prop, dice_value):
+        """
+        Method to pay rent for a property.
+        :param prop: Property object.
+        :param dice_value: Dice value to calculate rent value.
+        :return: Self.
+        """
+        if self._is_alive:
+            owner = prop.owner
+            value = prop.to_rent(dice_value)
+            self._balance -= value
+            owner.receive_bonus(value)
         return self

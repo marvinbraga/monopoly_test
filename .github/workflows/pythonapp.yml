@@ -30,9 +30,7 @@ jobs:
       - name: Tests with Pytest
         run: |
           export PYTHONPATH=src
-          pytest src/game/properties/tests/basics.py --cov=src/game/properties/tests/
-          pytest src/game/players/tests/basics.py --cov=src/game/players/tests/
-          pytest src/game/boards/tests/basics.py --cov=src/game/boards/tests/
+          pytest src/ --cov=src/
           codecov
 
       - run: echo "This job's status is ${{ job.status }}."
