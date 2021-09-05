@@ -30,14 +30,8 @@ jobs:
       - name: Tests with Pytest
         run: |
           export PYTHONPATH=src
-          pytest game/properties/tests/basics.py --cov=game/properties/tests/
+          pytest src/game/properties/tests/basics.py --cov=src/game/properties/tests/
+          pytest src/game/players/tests/basics.py --cov=src/game/players/tests/
           codecov
-
-#      - name: Run tests and collect coverage
-#        run: |
-#          coverage run game/properties/tests/basics.py
-#          coverage xml
-#      - name: Upload coverage to Codecov
-#        uses: codecov/codecov-action@v2
 
       - run: echo "This job's status is ${{ job.status }}."
