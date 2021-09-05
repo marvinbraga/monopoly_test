@@ -7,6 +7,7 @@ Properties Basics Tests Module.
 """
 import pytest
 
+from game.properties.classes import Property
 from src.game.players.data import PlayerData
 from src.game.properties.data import PropertyData
 
@@ -29,24 +30,18 @@ def players():
     return PlayerData.get()
 
 
-def test_properties_data_charge(properties):
-    assert properties
-    assert isinstance(properties, tuple)
-
-
-def test_players_data_charge(players):
-    assert players
-    assert isinstance(players, tuple)
-
-
-def test_add_owner_to_property(players, properties):
+def test_check_player_can_buy(players, properties):
     player = players[0]
     prop = properties[0]
-    if player.should_buy(prop):
-        player.buy(prop)
-    assert prop.owner is player
+    assert player.should_buy(prop)
 
 
-def test_is_property_free(properties):
-    prop = properties[0]
-    assert prop.owner is None
+def test_check_player_is_alive(players):
+    player = players[0]
+    assert player.is_alive
+
+
+def test_check_player_cant_buy(players):
+    player = players[0]
+    player.buy(Property('Max Property', 300.0, 10.0))
+    assert not player.should_buy(Property('Little Property', 1.0, 0.1))
