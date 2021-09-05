@@ -36,7 +36,7 @@ def test_properties_data_charge(properties):
 
 def test_players_data_charge(players):
     assert players
-    assert isinstance(players, tuple)
+    assert isinstance(players, list)
 
 
 def test_add_owner_to_property(players, properties):
