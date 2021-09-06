@@ -1,0 +1,6 @@
+version: "3.4"
+
+services:
+  console_app:
+    container_name: monopoly_console
+    image: marvinbraga/monopoly_test:console_app-v1
