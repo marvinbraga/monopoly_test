@@ -9,7 +9,7 @@ _Banco Imobiliário_
 [![Updates](https://pyup.io/repos/github/marvinbraga/monopoly_test/shield.svg)](https://pyup.io/repos/github/marvinbraga/monopoly_test/)
 [![Python 3](https://pyup.io/repos/github/marvinbraga/monopoly_test/python-3-shield.svg)](https://pyup.io/repos/github/marvinbraga/monopoly_test/)
 [![docker](https://img.shields.io/badge/docker-ready-green.svg)](https://hub.docker.com/repository/docker/marvinbraga/monopoly_test/tags?page=1&ordering=last_updated)
-[![docker-compose](https://img.shields.io/badge/docker%20compose-ready-green.svg)]()
+[![docker-compose](https://img.shields.io/badge/docker%20compose-ready-green.svg)](https://github.com/marvinbraga/monopoly_test/blob/master/docker-compose.yml)
 
 ## O Desafio
 
