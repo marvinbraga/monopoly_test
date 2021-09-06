@@ -59,6 +59,7 @@ class AbstractSubject(metaclass=ABCMeta):
         :return: Self.
         """
         self._observers |= {observer}
+        observer.set_subject(self)
         return self
 
     def detach(self, observer: AbstractObserver):
