@@ -40,7 +40,7 @@ class PropertyData:
             Property('Av. Juscelino Kubitschek', PropertyData._value_upgrade(14.0), PropertyData._rent_upgrade(0.7)),
             Property('Av. Morumbi', PropertyData._value_upgrade(22.0), PropertyData._rent_upgrade(2.1)),
             Property('Av. Higienópolis', PropertyData._value_upgrade(31.0), PropertyData._rent_upgrade(2.9)),
-            Property('Av. São João', PropertyData._value_upgrade(41.0), PropertyData._rent_upgrade(11.)),
+            Property('Av. São João', PropertyData._value_upgrade(41.0), PropertyData._rent_upgrade(11.0)),
             Company('Companhia Telefônica', PropertyData._value_upgrade(23.0), PropertyData._rent_upgrade(2.2)),
             Property('Av. Ipiranga', PropertyData._value_upgrade(33.0), PropertyData._rent_upgrade(7.0)),
             Property('Rua Brigadeiro Faria Lima', PropertyData._value_upgrade(30.5), PropertyData._rent_upgrade(9.1)),
