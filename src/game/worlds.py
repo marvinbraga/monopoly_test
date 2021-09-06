@@ -116,13 +116,8 @@ class Monopoly:
         Return the best player.
         :return: Player object.
         """
-        result = None
-        value = 0
-        for player in self._board.players:
-            if player.balance >= value:
-                result = player
-                value = player.balance
-        return result
+        values = [player.balance for player in self._board.players]
+        return self._board.players[values.index(max(values))]
 
     def start(self, total_simulations=300):
         """
@@ -142,8 +137,10 @@ class Monopoly:
         average_of_turns_for_a_game = self._infos['total_turns'] / total_matches
         win_rate_by_player_type = copy.deepcopy(self._game_informations.win_rate_by_player_type)
         win_rate_by_player_type[self._infos['win_player_type']] += 1
-        self._game_informations.set_info(total_matches, self._infos['total_turns'], matches_per_time_out,
-                                         average_of_turns_for_a_game, win_rate_by_player_type)
+        self._game_informations.set_info(
+            total_matches, self._infos['total_turns'], matches_per_time_out,
+            average_of_turns_for_a_game, win_rate_by_player_type
+        )
 
     def _play_game(self):
         self._board.reset_board()
