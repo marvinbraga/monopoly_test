@@ -55,14 +55,8 @@ class ConsoleObserver(AbstractObserver):
         print('Quantos turnos, em média, demora uma partida:',
               '{0:.2f}'.format(self._info['average_of_turns_for_a_game']))
         print('Qual a porcentagem de vitórias por comportamento dos jogadores:')
-        print(f"  > {PlayerType.IMPULSIVE.value[1]} = "
-              f"{players[PlayerType.IMPULSIVE]} ({self._get_percent(players, PlayerType.IMPULSIVE)}%)")
-        print(f"  > {PlayerType.DEMANDING.value[1]}  = "
-              f"{players[PlayerType.DEMANDING]} ({self._get_percent(players, PlayerType.DEMANDING)}%)")
-        print(f"  > {PlayerType.CAUTIOUS.value[1]} = "
-              f"{players[PlayerType.CAUTIOUS]} ({self._get_percent(players, PlayerType.CAUTIOUS)}%)")
-        print(f"  > {PlayerType.RANDOM.value[1]} = "
-              f"{players[PlayerType.RANDOM]} ({self._get_percent(players, PlayerType.RANDOM)}%)")
-        print(f"Qual o comportamento que mais vence: {max(players, key=players.get)}")
+        for player_type in [PlayerType.IMPULSIVE, PlayerType.DEMANDING, PlayerType.CAUTIOUS, PlayerType.RANDOM]:
+            print(f'  > {player_type.value[1]} = {players[player_type]} ({self._get_percent(players, player_type)}%)')
+        print(f'Qual o comportamento que mais vence: {max(players, key=players.get)}')
         print('=====================================================================================================')
         return self
