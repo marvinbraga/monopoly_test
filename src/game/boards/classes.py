@@ -5,6 +5,7 @@ Marcus Vinicius Braga, set 2021.
 
 Game Boards Module.
 """
+import copy
 import itertools
 
 from src.core.settings import MAXIMUM_NUMBER_PROPERTIES
@@ -18,11 +19,13 @@ class MonopolyBoard:
     """
 
     def __init__(self, players, properties):
-        self._players = players
-        self._properties = properties
+        self._players_clean = copy.deepcopy(players)
+        self._properties_clean = copy.deepcopy(properties)
+        self._players = copy.deepcopy(players)
+        self._properties = copy.deepcopy(properties)
         self._positions = []
+        self._iter_players = None
         self._check()._init_board()
-        self._iter_players = itertools.cycle(players)
 
     def __str__(self):
         return ''.join([str(p) + '\n' for p in self._properties])
@@ -32,6 +35,10 @@ class MonopolyBoard:
         Initialize board.
         :return: Self.
         """
+        self._players = copy.deepcopy(self._players_clean)
+        self._iter_players = itertools.cycle(self._players)
+        self._properties = copy.deepcopy(self._properties_clean)
+        self._positions = []
         start_position = BoardPosition(0, None)
         for player in self._players:
             start_position.add_player(player)
@@ -66,6 +73,14 @@ class MonopolyBoard:
         :return: Tuple.
         """
         return self._properties
+
+    def reset_board(self):
+        """
+        Reset board information.
+        :return: Self.
+        """
+        self._init_board()
+        return self
 
     def get_player_position(self, player):
         """
