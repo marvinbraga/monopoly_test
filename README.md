@@ -77,7 +77,7 @@ Uma execução do programa proposto deve rodar 300 simulações, imprimindo no c
 
 ## Clone e Instalação do Projeto 
 
-Para a execução dos testes deve-se primeiro baixar o projeto, num diretório completamente vazio, com o comando:
+O primeiro passo é baixar o projeto, **num diretório completamente vazio**, com o comando:
 
 `git clone https://github.com/marvinbraga/monopoly_test.git`
 
@@ -95,7 +95,7 @@ Com isto feito utiliza-se o comando `pytest src/ --cov=src/` para executar todos
 
 ## Execução do Programa no Console
 
-Para isto deve-se estar com o **ambiente virtual** ativado conforme já explicado no tópico anterior. 
+Para isto acontecer deve-se estar com o **ambiente virtual** ativado conforme já explicado no tópico anterior. 
 A aplicação pode ser iniciada através do comando:
 
 `python main.py`
