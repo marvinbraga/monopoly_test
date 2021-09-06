@@ -38,18 +38,22 @@ class ConsoleObserver(AbstractObserver):
         self.display()
         return self
 
-    def _get_percent(self, players, player_type):
+    def _get_percent(self, players, player_type) -> str:
         return '{0:.2f}'.format(players[player_type] / self._info['total_matches'] * 100)
+
+    def _get_players(self) -> dict:
+        return self._info['win_rate_by_player_type']
 
     def display(self):
         """
         Display information in console.
         :return: Self.
         """
-        players = self._info['win_rate_by_player_type']
+        players = self._get_players()
         print(f'Quantas partidas terminam por time-out ({ROUND_LIMIT} rodadas):',
-              self._info['matches_per_time_out'])
-        print('Quantos turnos, em média, demora uma partida:', self._info['average_of_turns_for_a_game'])
+              '{0:.2f}'.format(self._info['matches_per_time_out']))
+        print('Quantos turnos, em média, demora uma partida:',
+              '{0:.2f}'.format(self._info['average_of_turns_for_a_game']))
         print('Qual a porcentagem de vitórias por comportamento dos jogadores:')
         print(f"  > {PlayerType.IMPULSIVE.value[1]} = "
               f"{players[PlayerType.IMPULSIVE]} ({self._get_percent(players, PlayerType.IMPULSIVE)}%)")
