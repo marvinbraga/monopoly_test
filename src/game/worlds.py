@@ -31,7 +31,6 @@ class Monopoly:
     def _attach_observers(self, observers):
         for observer in observers:
             self._game_informations.attach(observer)
-            observer.set_subject(self._game_informations)
 
     def _init_informations(self):
         return {
