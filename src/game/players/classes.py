@@ -52,6 +52,14 @@ class Player:
         return f'[Player] Color: {self._color.value[1]}, Type: {self._player_type}, Balance: {self._balance}.'
 
     @property
+    def player_type(self):
+        """
+        Get player type.
+        :return: Object.
+        """
+        return self._player_type
+
+    @property
     def color(self):
         """
         Get color value.
