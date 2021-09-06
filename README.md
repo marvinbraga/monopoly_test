@@ -75,7 +75,7 @@ Uma execução do programa proposto deve rodar 300 simulações, imprimindo no c
 - Qual a porcentagem de vitórias por comportamento dos jogadores;
 - Qual o comportamento que mais vence.
 
-## Execução dos Testes
+## Clone e Instalação do Projeto 
 
 Para a execução dos testes deve-se primeiro baixar o projeto, num diretório completamente vazio, com o comando:
 
@@ -88,6 +88,8 @@ O segundo passo é ativar o **ambiente virtual do projeto** e para isto utiliza-
 Agora pode-se atualizar e carregar as bibliotecas do Python que são necessárias para o funcionamento do programa. Para isto utiliza-se o comando:
 
 `pipenv sync --dev`
+
+## Execução dos Testes
 
 Com isto feito utiliza-se o comando `pytest src/ --cov=src/` para executar todos os testes unitários implementados.
 
