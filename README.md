@@ -8,8 +8,8 @@ _Banco Imobiliário_
 [![codecov](https://codecov.io/gh/marvinbraga/monopoly_test/branch/master/graph/badge.svg?token=SARFBO5SIQ)](https://codecov.io/gh/marvinbraga/monopoly_test)
 [![Updates](https://pyup.io/repos/github/marvinbraga/monopoly_test/shield.svg)](https://pyup.io/repos/github/marvinbraga/monopoly_test/)
 [![Python 3](https://pyup.io/repos/github/marvinbraga/monopoly_test/python-3-shield.svg)](https://pyup.io/repos/github/marvinbraga/monopoly_test/)
-[![docker](https://img.shields.io/badge/docker-fail-red.svg)]()
-[![docker-compose](https://img.shields.io/badge/docker%20compose-fail-red.svg)]()
+[![docker](https://img.shields.io/badge/docker-ready-green.svg)](https://hub.docker.com/repository/docker/marvinbraga/monopoly_test/tags?page=1&ordering=last_updated)
+[![docker-compose](https://img.shields.io/badge/docker%20compose-ready-green.svg)]()
 
 ## O Desafio
 
@@ -102,4 +102,6 @@ A aplicação pode ser iniciada através do comando:
 
 ## Execução com o Docker Compose 
 
-Fazer!
+O comando para rodar com o Docker-Compose é o seguinte:
+
+`docker-compose up`
