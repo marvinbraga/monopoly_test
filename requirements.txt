@@ -7,7 +7,7 @@ charset-normalizer==2.0.12
 codecov==2.1.12
 colorama==0.4.4
 coverage==6.3.3
-decorator==5.1.0
+decorator==5.1.1
 flake8==3.9.2
 idna==3.2
 iniconfig==1.1.1
