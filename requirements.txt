@@ -34,7 +34,7 @@ pytest-cov==4.1.0
 requests==2.31.0
 toml==0.10.2
 traitlets==5.10.0
-urllib3==1.26.6
+urllib3==2.0.4
 wcwidth==0.2.5
 wrapt==1.12.1
 zipp==3.5.0
