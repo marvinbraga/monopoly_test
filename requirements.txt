@@ -29,7 +29,7 @@ pyflakes==3.1.0
 Pygments==2.16.1
 pylint==2.17.6
 pyparsing==3.1.1
-pytest==6.2.5
+pytest==7.4.2
 pytest-cov==2.12.1
 requests==2.26.0
 toml==0.10.2
