@@ -35,6 +35,6 @@ requests==2.32.1
 toml==0.10.2
 traitlets==5.14.3
 urllib3==2.2.1
-wcwidth==0.2.5
+wcwidth==0.2.13
 wrapt==1.12.1
 zipp==3.5.0
