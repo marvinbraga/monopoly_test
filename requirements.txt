@@ -18,7 +18,7 @@ lazy-object-proxy==1.10.0
 matplotlib-inline==0.1.7
 mccabe==0.7.0
 packaging==24.0
-parso==0.8.2
+parso==0.8.4
 pickleshare==0.7.5
 platformdirs==2.3.0
 pluggy==1.0.0
