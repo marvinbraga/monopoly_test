@@ -28,7 +28,7 @@ pycodestyle==2.13.0
 pyflakes==3.3.2
 Pygments==2.19.1
 pylint==3.3.6
-pyparsing==2.4.7
+pyparsing==3.2.3
 pytest==6.2.5
 pytest-cov==2.12.1
 requests==2.26.0
