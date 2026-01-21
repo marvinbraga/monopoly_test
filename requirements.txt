@@ -14,7 +14,7 @@ iniconfig==2.3.0
 ipython==9.9.0
 isort==7.0.0
 jedi==0.19.2
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.12.0
 matplotlib-inline==0.1.2
 mccabe==0.6.1
 packaging==21.0
