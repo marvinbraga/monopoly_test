@@ -13,7 +13,7 @@ idna==3.13
 iniconfig==2.3.0
 ipython==9.12.0
 isort==8.0.1
-jedi==0.18.0
+jedi==0.19.2
 lazy-object-proxy==1.6.0
 matplotlib-inline==0.1.2
 mccabe==0.6.1
