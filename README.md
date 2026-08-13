@@ -73,32 +73,31 @@ Uma execução do programa proposto deve rodar 300 simulações, imprimindo no c
 - Qual a porcentagem de vitórias por comportamento dos jogadores;
 - Qual o comportamento que mais vence.
 
-## Clone e Instalação do Projeto 
+## Clone e Instalação do Projeto
+
+O projeto exige **Python 3.14** e o gerenciador de pacotes [uv](https://docs.astral.sh/uv/).
 
 O primeiro passo é baixar o projeto, **num diretório completamente vazio**, com o comando:
 
 `git clone https://github.com/marvinbraga/monopoly_test.git`
 
-O segundo passo é ativar o **ambiente virtual do projeto** e para isto utiliza-se o comado:
+O segundo passo é criar o **ambiente virtual** e instalar as dependências de desenvolvimento:
 
-`pipenv shell`
+`uv sync --group dev`
 
-Agora pode-se atualizar e carregar as bibliotecas do Python que são necessárias para o funcionamento do programa. Para isto utiliza-se o comando:
-
-`pipenv sync --dev`
+O `uv` usa o Python 3.14 definido em `.python-version`.
 
 ## Execução dos Testes
 
-Com isto feito utiliza-se o comando `pytest src/ --cov=src/` para executar todos os testes unitários implementados.
+Com isto feito utiliza-se o comando `uv run pytest src/ --cov=src/` para executar todos os testes unitários implementados.
 
 ## Execução do Programa no Console
 
-Para isto acontecer deve-se estar com o **ambiente virtual** ativado conforme já explicado no tópico anterior. 
 A aplicação pode ser iniciada através do comando:
 
-`python main.py`
+`uv run python main.py`
 
-## Execução com o Docker Compose 
+## Execução com o Docker Compose
 
 O comando para rodar com o Docker-Compose é o seguinte:
 

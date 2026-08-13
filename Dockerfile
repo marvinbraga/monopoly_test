@@ -1,15 +1,14 @@
-FROM python:3.9.2
+FROM python:3.14-slim
 
 ENV PYTHONUNBUFFERED=1
-ENV PIPENV_VENV_IN_PROJECT=1
-ENV PIPENV_IGNORE_VIRTUALENVS=1
+ENV UV_PYTHON_DOWNLOADS=0
 
 WORKDIR /var/app
 
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
 COPY . ./
 
-RUN python3 -m pip install --upgrade pip \
-    && pip3 install pipenv \
-    && pipenv sync
+RUN uv sync --locked --no-dev
 
-CMD ["pipenv", "run", "python3", "main.py"]
+CMD ["uv", "run", "--no-dev", "python", "main.py"]
